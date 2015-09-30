@@ -30,7 +30,9 @@ function checkForPostType() {
 
     if (!post_type_exists('property') ) {
         $property_type->register_taxonomy(array(
-            'type' => 'Property Type'
+			'taxonomy_name' => 'Property_Types',
+			'singular' => 'Property Type',
+			'plural' => 'Property Types',
         ));
     }
 }
