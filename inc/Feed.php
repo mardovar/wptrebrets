@@ -11,6 +11,8 @@ class Feed
     public $login;
     public $password;
     protected $search;
+	private $rets_agent;
+	private $rets_agent_pass;
 
     /**
      * Get the options and assign to class
@@ -22,6 +24,8 @@ class Feed
         $this->login = wptrebrets_get_option('rets_username');
         $this->password = wptrebrets_get_option('rets_password');
         $this->url = wptrebrets_get_option('rets_url');
+		$this->rets_agent = wptrebrets_get_option('rets_user_agent');
+		$this->rets_agent_pass = wptrebrets_get_option('rets_user_agent_password');
     }
 
 
@@ -37,6 +41,10 @@ class Feed
         $login = $this->login;
 
         $config = new \PHRETS\Configuration;
+		if ( ! empty( $this->rets_agent ) ) {
+			$config->setUserAgent($this->rets_agent)
+				->setUserAgentPassword($this->rets_agent_pass);
+		}		
         $config->setLoginUrl($this->url)
             ->setUsername($login)
             ->setPassword($this->password)

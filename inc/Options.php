@@ -107,6 +107,18 @@ class Options {
 					'type' => 'text',
 				),
 				array(
+					'name' => __( 'RETS User-Agent', 'wptrebrets'),
+					'desc' => __( 'RETS User-Agent value, if needed, otherwise blank', 'wptrebrets'),
+					'id'   => 'rets_user_agent',
+					'type' => 'text',
+				),
+				array(
+					'name' => __( 'RETS User-Agent Password','wptrebret'),
+					'desc' => __( 'RETS User-Agent password value, if needed, otherwise blank', 'wptrebrets'),
+					'id'   => 'rets_user_agent_password',
+					'type' => 'text',
+				),
+				array(
 					'name' => __( 'RETS Limit', 'wptrebrets' ),
 					'desc' => __( 'How many properties to get on initial upload.', 'wptrebrets' ),
 					'id'   => 'rets_limit',
